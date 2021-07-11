@@ -1,0 +1,233 @@
+    1  sudo su
+    2  cd ~
+    3  ls
+    4  clear
+    5  sudo apt update
+    6  sudo apt upgrade
+    7  sudo apt update
+    8  clear
+    9  sudo rm /var/lib/dpkg/lock-frontend 
+   10  sudo rm /var/lib/dpkg/lock 
+   11  sudo reboot
+   12  sudo apt upgrade
+   13  sudo apt update
+   14  pwd
+   15  clear
+   16  sudo lsof -i -p -n
+   17  sudo lsof -i -P -n
+   18  sudo lsof -i -P -n | grep sshd
+   19  chef -v
+   20  clear
+   21  cd chef-repo/
+   22  ls
+   23  cd
+   24  ls
+   25  ssh-keygen -b 4096
+   26  cd chef-repo/
+   27  ls
+   28  mkdir .chef
+   29  scp ~/.chef/*.pem ~/chef-repo/.chef/
+   30  cd .chef/
+   31  ls
+   32  ls
+   33  vi demo.rb
+   34  mv demo.rb davood.rb
+   35  ls
+   36  vi davood.rb 
+   37  chef-apply davood.rb 
+   38  sudo chef-apply davood.rb 
+   39  cd /root/
+   40  ls
+   41  ls /root/
+   42  sudo ls /root/
+   43  sudo cat /root/davood.txt
+   44  clear
+   45  ls
+   46  pwd
+   47  mkdir chef_repo
+   48  ls
+   49  rm chef_repo/
+   50  rm -rf chef_repo/
+   51  mkdir chef-repo
+   52  ls
+   53  cd chef-repo/
+   54  ls
+   55  chef generate cookbook cookbooks/davood01
+   56  clear
+   57  ls
+   58  ls -l
+   59  mkdir cookbooks
+   60  chef generate cookbook cookbooks/davood01
+   61  ls
+   62  cd cookbooks/
+   63  ls
+   64  cd davood01/
+   65  ls
+   66  cd ..
+   67  tree cookbooks/davood01/
+   68  apt install tree
+   69  apt-get install tree
+   70  sudo agte-get install tree
+   71  sudo agt-get install tree
+   72  sudo apt-get install tree
+   73  tree cookbooks/davood01/
+   74  cat ../davood.rb >> cookbooks/davood01/recipes/default.rb 
+   75  cat cookbooks/davood01/recipes/default.rb 
+   76  clear
+   77  tree cookbooks/davood01/
+   78  sudo chef-applu cookbooks/davood01/recipes/default.rb 
+   79  sudo chef-apply cookbooks/davood01/recipes/default.rb 
+   80  git init
+   81  ls
+   82  ls -l
+   83  ls -al
+   84  git add .
+   85  git commit -m "initializing"
+   86  git log --oneline
+   87  git status
+   88  git add .
+   89  git commit -m "initializing02"
+   90  git status
+   91  git add *
+   92  git commit -m "initializing03"
+   93  sudo chef-client --local-mode --runlist "recipe[davood01]"
+   94  clear
+   95  git add --all
+   96  git commit -m "initializing04"
+   97  ls
+   98  ls -al
+   99  git add . --force
+  100  git commit -m "initializing05"
+  101  git add cookbooks/davood01/*
+  102  git rm --cached cookbooks/davood01
+  103  git add cookbooks/davood01/*
+  104  git commit -m "fix"
+  105  git status
+  106  ls
+  107  knife ssl fetch
+  108  knife ssl check
+  109  knife client list
+  110  knife node list
+  111  git config --global user.name 'Davood Shateri'
+  112  git config --global user.email 'dshateri@gmail.com'
+  113  echo ".chef" > ~/chef-repo/.gitignore
+  114  git add .
+  115  git commit -m 'initial commit'
+  116  git status
+  117  cat ~/.ssh/
+  118  cat ~/.ssh/id_rsa.pub 
+  119  clear
+  120  git remote add origin git@github.com:dshateri/chef-repo.git
+  121  git push
+  122  git push origin master
+  123  kitchen list
+  124  cd chef-repo/
+  125  kitchen list
+  126  ls
+  127  ls -al
+  128  cd ..
+  129  ls
+  130  cd chef-repo/
+  131  ls
+  132  ls -l
+  133  ls -al
+  134  cat .gitignore 
+  135  cd .chef/
+  136  ls -al
+  137  cd ..
+  138  tree
+  139  cd cookbooks/davood01/
+  140  kitchen list
+  141  cd ..
+  142  clear
+  143  vagrant --version
+  144  clear
+  145  kitchen login default-centos8
+  146  kitchen diagnose --all
+  147  clear
+  148  tree
+  149  vi cookbooks/davood01/kitchen.yml 
+  150  sudo -i
+  151  sudo kitchen list
+  152  sudo -i
+  153  clear
+  154  kitchen client list
+  155  knife client list
+  156  knife node list
+  157  clear
+  158  sudo -i
+  159  sudo cp /root/.kitchen/kitchen-vagrant/default-ubuntu-2004/.vagrant/machines/default/virtualbox/private_key ~/chef-repo/ub.key
+  160  sudo cp /root/.kitchen/kitchen-vagrant/default-centos-8/.vagrant/machines/default/virtualbox/private_key ~/chef-repo/cn.key
+  161  ls
+  162  ssh -p 2222 -i ub.key vagrant@127.0.0.1
+  163  ls
+  164  ssh -p 2222 -i ./ub.key vagrant@127.0.0.1
+  165  ls
+  166  sudo chown dshaterigmail *.key
+  167  ssh -p 2222 -i ub.key vagrant@127.0.0.1
+  168  ssh -p 2200 -i cn.key vagrant@127.0.0.1
+  169  clear
+  170  ls
+  171  ls -al
+  172  knife bootstrap 127.0.0.1 - ./ub.key --sudo -p 2222 -U vagrant -N ub01
+  173  knife bootstrap 127.0.0.1 -i ./ub.key --sudo -p 2222 -U vagrant -N ub01
+  174  knife bootstrap 127.0.0.1 -i ./cn.key --sudo -p 2200 -U vagrant -N cn01
+  175  clear
+  176  sudo -i
+  177  clear
+  178  knife node list
+  179  knife node show ub01
+  180  tree
+  181  knife
+  182  knife 
+  183  clear
+  184  knife cookbook list
+  185  tree
+  186  knife cookbook upload davood01
+  187  knife cookbook list
+  188  knife node list
+  189  tree
+  190  vi cookbooks/davood01/metadata.rb 
+  191  knife cookbook upload davood01
+  192  knife cookbook show davood01
+  193  vi cookbooks/davood01/metadata.rb 
+  194  knife ?
+  195  knife node show ub01
+  196  knife node run_list add ub01 "recipe[davood01]"
+  197  knife node show ub01
+  198  ssh -i ub.key -p 2222 vagrant@localhost sudo chef-client
+  199  ssh -i ub.key -p 2222 vagrant@localhost
+  200  clear
+  201  history
+  202  clear
+  203  history > history.txt
+  204* 
+  205  git add .
+  206  git status
+  207  knifr role list
+  208  knife role list
+  209  knife role create roleexample
+  210  knife role create roleexample -e vi
+  211  knife role list
+  212  knife node run_list add cn01 "role[roleexample]"
+  213  ssh -i cn.key -p 2200 vagrant@localhost sudo chef-client
+  214  TREE
+  215  reset
+  216  tree
+  217  reset
+  218  xmodmap -e "keycode 66 = Shift_L NoSymbol Shift_L"
+  219  cd chef-repo/
+  220  ls
+  221  cat history.txt 
+  222  chef generate cookbook cookbooks/web01
+  223  sudo -i
+  224  tree
+  225  vi cookbooks/web01/recipes/default.rb 
+  226  knife cookbook upload web01
+  227  knife cookbook list
+  228  knife node run_list add ub01 "recipe[web01]"
+  229  ssh -i ub.key -p 2222 vagrant@localhost sudo chef-client
+  230  ssh -i ub.key -p 2222 vagrant@localhost curl -s localhost
+  231  ssh -i ub.key -p 2222 vagrant@localhost systemctl apache2 status
+  232  ssh -i ub.key -p 2222 vagrant@localhost systemctl status apache2
+  233  history > history.txt 
